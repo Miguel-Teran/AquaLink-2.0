@@ -7,4 +7,8 @@
     <RootNamespace>AquaLink2._0</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>
