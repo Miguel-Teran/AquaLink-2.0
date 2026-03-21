@@ -2,11 +2,12 @@
 
 namespace AquaLink2._0.Services
 {
-    public class IReporteService
+    public interface IReporteService
     {
-        public interface Reporte
-        {
-            Task<List<Reporte>> ListarTodosAsync();
-        }
+        List<Reporte> ObtenerTodo();
+        Reporte ObtenerPorId(int id);
+        int Insertar(Reporte reporte);
+        void Actualizar(Reporte reporte);
+        void Borrar (int id);
     }
 }

@@ -4455,23 +4455,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Javi\\.nuget\\packages\\": {},
+    "C:\\Users\\joset\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Javi\\Desktop\\AquaLink2.0\\AquaLink-2.0\\AquaLink2.0\\AquaLink2.0.csproj",
+      "projectUniqueName": "C:\\Users\\joset\\OneDrive\\Escritorio\\AquaLink 2.0\\AquaLink2.0\\AquaLink2.0.csproj",
       "projectName": "AquaLink2.0",
-      "projectPath": "C:\\Users\\Javi\\Desktop\\AquaLink2.0\\AquaLink-2.0\\AquaLink2.0\\AquaLink2.0.csproj",
-      "packagesPath": "C:\\Users\\Javi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Javi\\Desktop\\AquaLink2.0\\AquaLink-2.0\\AquaLink2.0\\obj\\",
+      "projectPath": "C:\\Users\\joset\\OneDrive\\Escritorio\\AquaLink 2.0\\AquaLink2.0\\AquaLink2.0.csproj",
+      "packagesPath": "C:\\Users\\joset\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\joset\\OneDrive\\Escritorio\\AquaLink 2.0\\AquaLink2.0\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Javi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\joset\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4499,7 +4499,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -4533,8 +4533,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché C:\\Users\\joset\\OneDrive\\Escritorio\\AquaLink 2.0\\AquaLink2.0\\obj\\project.nuget.cache : '<' is an invalid start of a property name. Expected a '\"'. Path: $ | LineNumber: 2 | BytePositionInLine: 0."
+    }
+  ]
 }
