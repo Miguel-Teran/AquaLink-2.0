@@ -11,12 +11,5 @@ namespace AquaLink2._0.Controllers
         {
             _reporteService = reporteService;
         }
-
-        public async Task<IActionResult> Index()
-        {
-            var lista = await _reporteService.ListarTodosAsync();
-
-            return View(lista);
-        }
     }
 }

@@ -3,9 +3,8 @@ using AquaLink2._0.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddScoped<IAutenService, AutenService>();
-builder.Services.AddScoped<IReporteService, ReporteService>();
-builder.Services.AddSingleton<ComentarioService>();
+builder.Services.AddScoped<AutenService>();
+builder.Services.AddScoped<ReporteService>();
 builder.Services.AddScoped<ComentarioService>();
 builder.Services.AddScoped<EviService>();
 

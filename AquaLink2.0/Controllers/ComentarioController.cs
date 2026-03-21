@@ -18,7 +18,8 @@ namespace AquaLink2._0.Controllers
         {
             if (nuevo != null && !string.IsNullOrEmpty(nuevo.Com_Descripcion))
             {
-                await _comentarioService.AgregarComentarioAsync(nuevo);
+                // CAMBIO: De AgregarComentarioAsync a Insertar
+                await _comentarioService.Insertar(nuevo);
                 return RedirectToAction("Index", "Reporte");
             }
             return BadRequest("El comentario no puede estar vacío.");

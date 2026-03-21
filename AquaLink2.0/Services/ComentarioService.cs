@@ -4,19 +4,18 @@ namespace AquaLink2._0.Services
 {
     public class ComentarioService : IComentarioService
     {
-        private static List<Comentario> _comentariosSimulados = new List<Comentario>();
+        private static List<Comentario> _comentarios = new List<Comentario>();
 
-        public async Task<List<Comentario>> ObtenerPorReporteAsync(int idReporte)
+        public async Task<List<Comentario>> ListarPorReporte(int idRep) =>
+            _comentarios.Where(c => c.Com_IdRep == idRep).ToList();
+
+        public async Task Insertar(Comentario nuevo)
         {
-            await Task.Delay(50);
-            return _comentariosSimulados.Where(c => c.Com_IdRep == idReporte).ToList();
+            nuevo.Com_Id = _comentarios.Count > 0 ? _comentarios.Max(c => c.Com_Id) + 1 : 1;
+            _comentarios.Add(nuevo);
         }
 
-        public async Task<bool> AgregarComentarioAsync(Comentario nuevo)
-        {
-            nuevo.Com_Id = _comentariosSimulados.Count + 1;
-            _comentariosSimulados.Add(nuevo);
-            return await Task.FromResult(true);
-        }
+        public async Task Borrar(int id) => _comentarios.RemoveAll(c => c.Com_Id == id);
     }
 }
+
