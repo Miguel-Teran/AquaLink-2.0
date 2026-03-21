@@ -6,7 +6,7 @@ namespace AquaLink2._0.Services
     {
         private static List<Reporte> _reportes = new List<Reporte>();
 
-        public async Task<List<Reporte>> Listar() => await Task.FromResult(_reportes);
+        public async Task<List<Reporte>> ObtenerTodo() => await Task.FromResult(_reportes);
 
         public async Task<Reporte?> ObtenerPorId(int id) => _reportes.FirstOrDefault(r => r.Rep_Id == id);
 
