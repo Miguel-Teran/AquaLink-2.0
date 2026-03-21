@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Sammy\\OneDrive\\tareas\\Proyectos\\AquaLink-2.0\\AquaLink2.0\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|c:\\users\\sammy\\onedrive\\tareas\\proyectos\\aqualink-2.0\\aqualink2.0\\services\\reporteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|solutionrelative:services\\reporteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|c:\\users\\sammy\\onedrive\\tareas\\proyectos\\aqualink-2.0\\aqualink2.0\\services\\eviservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|solutionrelative:services\\eviservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|c:\\users\\sammy\\onedrive\\tareas\\proyectos\\aqualink-2.0\\aqualink2.0\\services\\iautenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|solutionrelative:services\\iautenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|c:\\users\\sammy\\onedrive\\tareas\\proyectos\\aqualink-2.0\\aqualink2.0\\services\\autenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|solutionrelative:services\\autenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|c:\\users\\sammy\\onedrive\\tareas\\proyectos\\aqualink-2.0\\aqualink2.0\\services\\comentarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|solutionrelative:services\\comentarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|c:\\users\\sammy\\onedrive\\tareas\\proyectos\\aqualink-2.0\\aqualink2.0\\services\\eviservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|solutionrelative:services\\eviservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|c:\\users\\sammy\\onedrive\\tareas\\proyectos\\aqualink-2.0\\aqualink2.0\\services\\reporteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|solutionrelative:services\\reporteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|c:\\users\\sammy\\onedrive\\tareas\\proyectos\\aqualink-2.0\\aqualink2.0\\services\\iautenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|solutionrelative:services\\iautenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|c:\\users\\sammy\\onedrive\\tareas\\proyectos\\aqualink-2.0\\aqualink2.0\\controllers\\evidenciacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -86,11 +86,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "ReporteService.cs",
               "DocumentMoniker": "C:\\Users\\Sammy\\OneDrive\\tareas\\Proyectos\\AquaLink-2.0\\AquaLink2.0\\Services\\ReporteService.cs",
               "RelativeDocumentMoniker": "Services\\ReporteService.cs",
@@ -103,7 +103,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "ComentarioService.cs",
               "DocumentMoniker": "C:\\Users\\Sammy\\OneDrive\\tareas\\Proyectos\\AquaLink-2.0\\AquaLink2.0\\Services\\ComentarioService.cs",
               "RelativeDocumentMoniker": "Services\\ComentarioService.cs",
@@ -116,26 +116,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "EviService.cs",
               "DocumentMoniker": "C:\\Users\\Sammy\\OneDrive\\tareas\\Proyectos\\AquaLink-2.0\\AquaLink2.0\\Services\\EviService.cs",
               "RelativeDocumentMoniker": "Services\\EviService.cs",
               "ToolTip": "C:\\Users\\Sammy\\OneDrive\\tareas\\Proyectos\\AquaLink-2.0\\AquaLink2.0\\Services\\EviService.cs",
               "RelativeToolTip": "Services\\EviService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBEAAABXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-12T15:38:24.084Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "AutenService.cs",
               "DocumentMoniker": "C:\\Users\\Sammy\\OneDrive\\tareas\\Proyectos\\AquaLink-2.0\\AquaLink2.0\\Services\\AutenService.cs",
               "RelativeDocumentMoniker": "Services\\AutenService.cs",
               "ToolTip": "C:\\Users\\Sammy\\OneDrive\\tareas\\Proyectos\\AquaLink-2.0\\AquaLink2.0\\Services\\AutenService.cs",
               "RelativeToolTip": "Services\\AutenService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwAYAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-18T02:45:48.067Z",
               "EditorCaption": ""
@@ -174,12 +174,11 @@
               "RelativeToolTip": "Controllers\\EvidenciaController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T03:11:37.558Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-18T03:11:37.558Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "IAutenService.cs",
               "DocumentMoniker": "C:\\Users\\Sammy\\OneDrive\\tareas\\Proyectos\\AquaLink-2.0\\AquaLink2.0\\Services\\IAutenService.cs",
               "RelativeDocumentMoniker": "Services\\IAutenService.cs",
@@ -187,8 +186,7 @@
               "RelativeToolTip": "Services\\IAutenService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-18T03:17:52.251Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-18T03:17:52.251Z"
             },
             {
               "$type": "Document",
