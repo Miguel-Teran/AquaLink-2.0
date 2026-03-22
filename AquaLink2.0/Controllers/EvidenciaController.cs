@@ -4,53 +4,70 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AquaLink2._0.Controllers
 {
-    public class EvidenciaController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class EvidenciaController : ControllerBase
     {
-        private readonly EviService _evidenciaService;
-        public EvidenciaController(EviService evidenciaService)
-        {
-            _evidenciaService = evidenciaService;
-        }
-        public async Task<IActionResult> VerPorReporte(int idReporte)
-        {
-<<<<<<< HEAD
-            var lista = await _eviService.ListarPorReporte(idReporte);
-            return View(lista);
-=======
-            var evidencias = await _evidenciaService.ObtenerPorReporteAsync(idReporte);
-            return View(evidencias);
-        }
-        public IActionResult Subir(int idReporte)
-        {
-            var evidencia = new Evidencia
-            {
-                Evi_IdRep = idReporte
-            };
+        private readonly EviService _eviService;
 
-            return View(evidencia);
->>>>>>> b5ded573e8b681ebd88cc82e63e5b5ca2db6726d
+        public EvidenciaController(EviService eviService)
+        {
+            _eviService = eviService;
+        }
+
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            var evidencias = _eviService.ObtenerTodo();
+            return Ok(evidencias);
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetById(int id)
+        {
+            var evidencia = _eviService.ObtenerPorId(id);
+
+            if (evidencia == null)
+                return NotFound();
+
+            return Ok(evidencia);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Subir(Evidencia nueva)
+        public IActionResult Insert([FromBody] Evidencia nueva)
         {
-<<<<<<< HEAD
-            await _eviService.Insertar(nueva);
-            return RedirectToAction("Index", "Reporte");
-=======
-            if (!ModelState.IsValid)
-                return View(nueva);
+            if (nueva == null)
+                return BadRequest();
 
-            var resultado = await _evidenciaService.GuardarEvidenciaAsync(nueva);
+            _eviService.Insertar(nueva);
+            return Ok(nueva);
+        }
 
-            if (!resultado)
-            {
-                ViewBag.Error = "No se pudo guardar la evidencia";
-                return View(nueva);
-            }
+        [HttpPut]
+        public IActionResult Update([FromBody] Evidencia modificada)
+        {
+            if (modificada == null)
+                return BadRequest();
 
-            return RedirectToAction("VerPorReporte", new { idReporte = nueva.Evi_IdRep });
->>>>>>> b5ded573e8b681ebd88cc82e63e5b5ca2db6726d
+            var existente = _eviService.ObtenerPorId(modificada.Evi_Id);
+
+            if (existente == null)
+                return NotFound();
+
+            _eviService.Actualizar(modificada);
+            return Ok(modificada);
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            var existente = _eviService.ObtenerPorId(id);
+
+            if (existente == null)
+                return NotFound();
+
+            _eviService.Borrar(id);
+            return Ok();
         }
     }
 
