@@ -2,15 +2,12 @@
 
 namespace AquaLink2._0.Services
 {
-    public class IEvidenciaService
+    public interface IEvidenciaService
     {
-        public class IEviService
-        {
-            public interface IEviInternal
-            {
-                Task<List<Evidencia>> ObtenerPorReporteAsync(int idReporte);
-                Task<bool> GuardarEvidenciaAsync(Evidencia nueva);
-            }
-        }
+        List<Evidencia> ObtenerTodo();
+        Evidencia ObtenerPorId(int id);
+        void Insertar(Evidencia evidencia);
+        void Actualizar(Evidencia evidencia);
+        void Borrar(int id);
     }
 }

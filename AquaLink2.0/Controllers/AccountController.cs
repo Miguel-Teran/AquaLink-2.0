@@ -5,9 +5,9 @@ namespace AquaLink2._0.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly AutenService _autenService;
+        private readonly UsuarioService _autenService;
 
-        public AccountController(AutenService autenService)
+        public AccountController(UsuarioService autenService)
         {
             _autenService = autenService;
         }

@@ -1,0 +1,122 @@
+﻿using AquaLink2._0.Models;
+using Microsoft.Data.SqlClient;
+using System.Data;
+
+namespace AquaLink2._0.Services
+{
+    public class UsuarioService : IUsuarioService
+    {
+        private readonly string _connection;
+
+        public UsuarioService(IConfiguration config)
+        {
+            _connection = config.GetConnectionString("DefaultConnection");
+        }
+
+        public List<Usuario> ObtenerTodo()
+        {
+            var lista = new List<Usuario>();
+            using SqlConnection conn = new SqlConnection(_connection);
+            using SqlCommand cmd = new SqlCommand("Listar_Usuarios", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conn.Open();
+
+            using var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                lista.Add(new Usuario
+                {
+                    Usu_Id = Convert.ToInt32(reader["Usu_Id"]),
+                    Usu_Nombre = reader["Usu_Nombre"].ToString(),
+                    Usu_Correo = reader["Usu_Correo"].ToString(),
+                    Usu_Telefono = reader["Usu_Telefono"].ToString(),
+                    Usu_IdRol = reader["Usu_IdRol"].ToString()
+                });
+            }
+            return lista;
+        }
+
+        public Usuario ObtenerPorId(int id)
+        {
+            using SqlConnection conn = new SqlConnection(_connection);
+            using SqlCommand cmd = new SqlCommand("Obtener_Usuario_Por_Id", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Usu_Id", id);
+
+            conn.Open();
+            using var reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                return new Usuario
+                {
+                    Usu_Id = Convert.ToInt32(reader["Usu_Id"]),
+                    Usu_Nombre = reader["Usu_Nombre"].ToString(),
+                    Usu_Correo = reader["Usu_Correo"].ToString(),
+                    Usu_IdRol = reader["Usu_IdRol"].ToString()
+                };
+            }
+            return null;
+        }
+
+        public void Insertar(Usuario usuario)
+        {
+            using SqlConnection conn = new SqlConnection(_connection);
+            using SqlCommand cmd = new SqlCommand("Ins_Usuario", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Nombre", usuario.Usu_Nombre);
+            cmd.Parameters.AddWithValue("@Correo", usuario.Usu_Correo);
+            cmd.Parameters.AddWithValue("@Telefono", usuario.Usu_Telefono);
+            cmd.Parameters.AddWithValue("@IdRol", usuario.Usu_IdRol);
+
+            conn.Open();
+            cmd.ExecuteNonQuery();
+        }
+
+        public void Actualizar(Usuario usuario)
+        {
+            using SqlConnection conn = new SqlConnection(_connection);
+            using SqlCommand cmd = new SqlCommand("Act_Usuario", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Usu_Id", usuario.Usu_Id);
+            cmd.Parameters.AddWithValue("@Nombre", usuario.Usu_Nombre);
+            cmd.Parameters.AddWithValue("@Correo", usuario.Usu_Correo);
+
+            conn.Open();
+            cmd.ExecuteNonQuery();
+        }
+
+        public void Borrar(int id)
+        {
+            using SqlConnection conn = new SqlConnection(_connection);
+            using SqlCommand cmd = new SqlCommand("Eliminar_Usuario", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Usu_Id", id);
+
+            conn.Open();
+            cmd.ExecuteNonQuery();
+        }
+
+        public Usuario ValidarLogin(string correo, string password)
+        {
+            using SqlConnection conn = new SqlConnection(_connection);
+            using SqlCommand cmd = new SqlCommand("Validar_Acceso", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Correo", correo);
+            cmd.Parameters.AddWithValue("@Pass", password);
+
+            conn.Open();
+            using var reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                return new Usuario
+                {
+                    Usu_Id = Convert.ToInt32(reader["Usu_Id"]),
+                    Usu_Nombre = reader["Usu_Nombre"].ToString(),
+                    Usu_IdRol = reader["Usu_IdRol"].ToString()
+                };
+            }
+            return null;
+        }
+
+    }
+}

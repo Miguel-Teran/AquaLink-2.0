@@ -4455,23 +4455,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Javi\\.nuget\\packages\\": {},
+    "C:\\Users\\Sammy\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Javi\\Desktop\\AquaLink2.0\\AquaLink-2.0\\AquaLink2.0\\AquaLink2.0.csproj",
+      "projectUniqueName": "C:\\Users\\Sammy\\OneDrive\\tareas\\Proyectos\\AquaLink-2.0\\AquaLink2.0\\AquaLink2.0.csproj",
       "projectName": "AquaLink2.0",
-      "projectPath": "C:\\Users\\Javi\\Desktop\\AquaLink2.0\\AquaLink-2.0\\AquaLink2.0\\AquaLink2.0.csproj",
-      "packagesPath": "C:\\Users\\Javi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Javi\\Desktop\\AquaLink2.0\\AquaLink-2.0\\AquaLink2.0\\obj\\",
+      "projectPath": "C:\\Users\\Sammy\\OneDrive\\tareas\\Proyectos\\AquaLink-2.0\\AquaLink2.0\\AquaLink2.0.csproj",
+      "packagesPath": "C:\\Users\\Sammy\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Sammy\\OneDrive\\tareas\\Proyectos\\AquaLink-2.0\\AquaLink2.0\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Javi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Sammy\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4525,6 +4525,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.25, 8.0.25]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[8.0.25, 8.0.25]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.25, 8.0.25]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[8.0.25, 8.0.25]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -4533,7 +4551,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.115/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

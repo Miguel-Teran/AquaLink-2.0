@@ -2,12 +2,12 @@
 
 namespace AquaLink2._0.Services
 {
-    public class IComentarioService
+    public interface IComentarioService
     {
-        public interface IComentarioInternal
-        {
-            Task<List<Comentario>> ObtenerPorReporteAsync(int idReporte);
-            Task<bool> AgregarComentarioAsync(Comentario nuevo);
-        }
+        List<Comentario> ObtenerTodo();
+        Comentario ObtenerPorId(int id);
+        void Insertar(Comentario comentario);
+        void Actualizar(Comentario comentario);
+        void Borrar(int id);
     }
 }

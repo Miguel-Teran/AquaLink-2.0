@@ -3,10 +3,10 @@ using AquaLink2._0.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddScoped<AutenService>();
-builder.Services.AddScoped<ReporteService>();
-builder.Services.AddScoped<ComentarioService>();
-builder.Services.AddScoped<EviService>();
+builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+builder.Services.AddScoped<IReporteService, ReporteService>();
+builder.Services.AddScoped<IComentarioService, ComentarioService>();
+builder.Services.AddScoped<IEvidenciaService, EviService>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
