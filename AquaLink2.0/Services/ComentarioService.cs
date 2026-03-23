@@ -18,7 +18,7 @@ namespace AquaLink2._0.Services
         {
             var lista = new List<Comentario>();
             using SqlConnection conn = new SqlConnection(_connection);
-            using SqlCommand cmd = new SqlCommand("Listar_Comentario", conn);
+            using SqlCommand cmd = new SqlCommand("Obtener_Comentario", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@Descripcion", "");
@@ -41,7 +41,7 @@ namespace AquaLink2._0.Services
         public Comentario ObtenerPorId(int id)
         {
             using SqlConnection conn = new SqlConnection(_connection);
-            using SqlCommand cmd = new SqlCommand("Bus_Comentario", conn);
+            using SqlCommand cmd = new SqlCommand("Obtener_Comentario_Por_Id", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Clave", id);
 
@@ -63,7 +63,7 @@ namespace AquaLink2._0.Services
         public void Insertar(Comentario comentario)
         {
             using SqlConnection conn = new SqlConnection(_connection);
-            using SqlCommand cmd = new SqlCommand("Ins_Comentario", conn);
+            using SqlCommand cmd = new SqlCommand("Insertar_Comentario", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@IdUsu", comentario.Com_IdUsu);
@@ -77,7 +77,7 @@ namespace AquaLink2._0.Services
         public void Actualizar(Comentario comentario)
         {
             using SqlConnection conn = new SqlConnection(_connection);
-            using SqlCommand cmd = new SqlCommand("Act_Comentario", conn);
+            using SqlCommand cmd = new SqlCommand("Actualizar_Comentario", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@IdCom", comentario.Com_Id);
@@ -90,7 +90,7 @@ namespace AquaLink2._0.Services
         public void Borrar(int id)
         {
             using SqlConnection conn = new SqlConnection(_connection);
-            using SqlCommand cmd = new SqlCommand("Del_Comentario", conn);
+            using SqlCommand cmd = new SqlCommand("Eliminar_Comentario", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Clave", id);
 

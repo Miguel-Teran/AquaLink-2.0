@@ -6,6 +6,6 @@
         public string? Usu_Nombre { get; set; }
         public string? Usu_Correo { get; set; }
         public string? Usu_Telefono { get; set; }
-        public string? Usu_IdRol {  get; set; }
+        public int Usu_IdRol {  get; set; }
     }
 }

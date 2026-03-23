@@ -17,7 +17,7 @@ namespace AquaLink2._0.Services
         {
             var lista = new List<Evidencia>();
             using SqlConnection conn = new SqlConnection(_connection);
-            using SqlCommand cmd = new SqlCommand("sp_ListarEvidencias", conn);
+            using SqlCommand cmd = new SqlCommand("Obtener_Evidencias", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             conn.Open();
@@ -38,7 +38,7 @@ namespace AquaLink2._0.Services
         public Evidencia ObtenerPorId(int id)
         {
             using SqlConnection conn = new SqlConnection(_connection);
-            using SqlCommand cmd = new SqlCommand("sp_ObtenerEvidenciaPorId", conn);
+            using SqlCommand cmd = new SqlCommand("Obtener_Evidencia_Por_Id", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@IdEvi", id);
 
@@ -60,7 +60,7 @@ namespace AquaLink2._0.Services
         public void Insertar(Evidencia evidencia)
         {
             using SqlConnection conn = new SqlConnection(_connection);
-            using SqlCommand cmd = new SqlCommand("sp_InsertarEvidencia", conn);
+            using SqlCommand cmd = new SqlCommand("Insertar_Evidencia", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@IdRep", evidencia.Evi_IdRep);
@@ -74,7 +74,7 @@ namespace AquaLink2._0.Services
         public void Actualizar(Evidencia evidencia)
         {
             using SqlConnection conn = new SqlConnection(_connection);
-            using SqlCommand cmd = new SqlCommand("sp_ActualizarEvidencia", conn);
+            using SqlCommand cmd = new SqlCommand("Actualizar_Evidencia", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@IdRep", evidencia.Evi_IdRep);
@@ -88,7 +88,7 @@ namespace AquaLink2._0.Services
         public void Borrar(int id)
         {
             using SqlConnection conn = new SqlConnection(_connection);
-            using SqlCommand cmd = new SqlCommand("sp_EliminarEvidencia", conn);
+            using SqlCommand cmd = new SqlCommand("Eliminar_Evidencia", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@IdRep", id);

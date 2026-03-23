@@ -8,22 +8,22 @@ namespace AquaLink2._0.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase
     {
-        private readonly UsuarioService _usuarioService;
+        private readonly IUsuarioService _usuarioService;
 
-        public UsuarioController(UsuarioService usuarioService)
+        public UsuarioController(IUsuarioService usuarioService)
         {
             _usuarioService = usuarioService;
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public IActionResult ObtenerTodo()
         {
             var usuarios = _usuarioService.ObtenerTodo();
             return Ok(usuarios);
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById(int id)
+        public IActionResult ObtenerPorId(int id)
         {
             var usuario = _usuarioService.ObtenerPorId(id);
 

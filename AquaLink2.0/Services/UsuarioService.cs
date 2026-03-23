@@ -17,7 +17,8 @@ namespace AquaLink2._0.Services
         {
             var lista = new List<Usuario>();
             using SqlConnection conn = new SqlConnection(_connection);
-            using SqlCommand cmd = new SqlCommand("Listar_Usuarios", conn);
+            using SqlCommand cmd = new SqlCommand("Obtener_Usuario", conn);
+
             cmd.CommandType = CommandType.StoredProcedure;
             conn.Open();
 
@@ -30,7 +31,7 @@ namespace AquaLink2._0.Services
                     Usu_Nombre = reader["Usu_Nombre"].ToString(),
                     Usu_Correo = reader["Usu_Correo"].ToString(),
                     Usu_Telefono = reader["Usu_Telefono"].ToString(),
-                    Usu_IdRol = reader["Usu_IdRol"].ToString()
+                    Usu_IdRol = Convert.ToInt32(reader["Usu_IdRol"])
                 });
             }
             return lista;
@@ -40,11 +41,13 @@ namespace AquaLink2._0.Services
         {
             using SqlConnection conn = new SqlConnection(_connection);
             using SqlCommand cmd = new SqlCommand("Obtener_Usuario_Por_Id", conn);
+
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Usu_Id", id);
 
             conn.Open();
             using var reader = cmd.ExecuteReader();
+
             if (reader.Read())
             {
                 return new Usuario
@@ -52,7 +55,7 @@ namespace AquaLink2._0.Services
                     Usu_Id = Convert.ToInt32(reader["Usu_Id"]),
                     Usu_Nombre = reader["Usu_Nombre"].ToString(),
                     Usu_Correo = reader["Usu_Correo"].ToString(),
-                    Usu_IdRol = reader["Usu_IdRol"].ToString()
+                    Usu_IdRol = Convert.ToInt32(reader["Usu_IdRol"])
                 };
             }
             return null;
@@ -61,11 +64,13 @@ namespace AquaLink2._0.Services
         public void Insertar(Usuario usuario)
         {
             using SqlConnection conn = new SqlConnection(_connection);
-            using SqlCommand cmd = new SqlCommand("Ins_Usuario", conn);
+            using SqlCommand cmd = new SqlCommand("sp_InsertarUsuario", conn);
+
             cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Id", usuario.Usu_Id);
             cmd.Parameters.AddWithValue("@Nombre", usuario.Usu_Nombre);
             cmd.Parameters.AddWithValue("@Correo", usuario.Usu_Correo);
-            cmd.Parameters.AddWithValue("@Telefono", usuario.Usu_Telefono);
+            cmd.Parameters.AddWithValue("@Tel", usuario.Usu_Telefono);
             cmd.Parameters.AddWithValue("@IdRol", usuario.Usu_IdRol);
 
             conn.Open();
@@ -75,11 +80,14 @@ namespace AquaLink2._0.Services
         public void Actualizar(Usuario usuario)
         {
             using SqlConnection conn = new SqlConnection(_connection);
-            using SqlCommand cmd = new SqlCommand("Act_Usuario", conn);
+            using SqlCommand cmd = new SqlCommand("Actualizar_Usuario", conn);
+
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Usu_Id", usuario.Usu_Id);
+            cmd.Parameters.AddWithValue("@Usuario_Id", usuario.Usu_Id);
             cmd.Parameters.AddWithValue("@Nombre", usuario.Usu_Nombre);
             cmd.Parameters.AddWithValue("@Correo", usuario.Usu_Correo);
+            cmd.Parameters.AddWithValue("@Telefono", usuario.Usu_Telefono);
+            cmd.Parameters.AddWithValue("@IdRol", usuario.Usu_IdRol);
 
             conn.Open();
             cmd.ExecuteNonQuery();
@@ -100,19 +108,21 @@ namespace AquaLink2._0.Services
         {
             using SqlConnection conn = new SqlConnection(_connection);
             using SqlCommand cmd = new SqlCommand("Validar_Acceso", conn);
+
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Correo", correo);
             cmd.Parameters.AddWithValue("@Pass", password);
 
             conn.Open();
             using var reader = cmd.ExecuteReader();
+
             if (reader.Read())
             {
                 return new Usuario
                 {
                     Usu_Id = Convert.ToInt32(reader["Usu_Id"]),
                     Usu_Nombre = reader["Usu_Nombre"].ToString(),
-                    Usu_IdRol = reader["Usu_IdRol"].ToString()
+                    Usu_IdRol = Convert.ToInt32(reader["Usu_IdRol"])
                 };
             }
             return null;
