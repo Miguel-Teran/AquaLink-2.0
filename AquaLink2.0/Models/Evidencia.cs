@@ -4,7 +4,7 @@
     {
         public int Evi_Id { get; set; }
         public string? Evi_Descripcion { get; set; }
-        public string? Evi_Imagen { get; set; }
+        public string? Evi_ImaURL { get; set; }
         public int Evi_IdRep {  get; set; }
     }
 }

@@ -20,10 +20,8 @@ namespace AquaLink2._0.Services
             using SqlConnection conn = new SqlConnection(_connection);
             using SqlCommand cmd = new SqlCommand("Obtener_Comentario", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.AddWithValue("@Descripcion", "");
-
             conn.Open();
+
             using var reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -43,7 +41,7 @@ namespace AquaLink2._0.Services
             using SqlConnection conn = new SqlConnection(_connection);
             using SqlCommand cmd = new SqlCommand("Obtener_Comentario_Por_Id", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Clave", id);
+            cmd.Parameters.AddWithValue("@Id", id);
 
             conn.Open();
             using var reader = cmd.ExecuteReader();
@@ -68,7 +66,7 @@ namespace AquaLink2._0.Services
 
             cmd.Parameters.AddWithValue("@IdUsu", comentario.Com_IdUsu);
             cmd.Parameters.AddWithValue("@IdRep", comentario.Com_IdRep);
-            cmd.Parameters.AddWithValue("@Descripción", comentario.Com_Descripcion);
+            cmd.Parameters.AddWithValue("@Descripcion", comentario.Com_Descripcion);
 
             conn.Open();
             cmd.ExecuteNonQuery();
@@ -80,7 +78,9 @@ namespace AquaLink2._0.Services
             using SqlCommand cmd = new SqlCommand("Actualizar_Comentario", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@IdCom", comentario.Com_Id);
+            cmd.Parameters.AddWithValue("@Clave", comentario.Com_Id);
+            cmd.Parameters.AddWithValue("@IdUsu", comentario.Com_IdUsu);
+            cmd.Parameters.AddWithValue("@IdRep", comentario.Com_IdRep);
             cmd.Parameters.AddWithValue("@Descripción", comentario.Com_Descripcion);
 
             conn.Open();
@@ -92,7 +92,7 @@ namespace AquaLink2._0.Services
             using SqlConnection conn = new SqlConnection(_connection);
             using SqlCommand cmd = new SqlCommand("Eliminar_Comentario", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Clave", id);
+            cmd.Parameters.AddWithValue("@Id", id);
 
             conn.Open();
             cmd.ExecuteNonQuery();

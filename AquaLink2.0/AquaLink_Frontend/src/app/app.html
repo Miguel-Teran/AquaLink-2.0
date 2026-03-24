@@ -1,0 +1,98 @@
+<div class="container mt-5">
+  <mat-card class="mb-4 shadow">
+    <mat-card-header>
+      <mat-card-title>{{ isEditing ? 'Editar Usuario' : 'Nuevo Usuario' }}</mat-card-title>
+      <mat-card-subtitle>Gestión de personal de AquaLink 2.0</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content class="mt-3">
+      <form class="row">
+        <mat-form-field class="col-md-4" appearance="outline">
+          <mat-label>Id Nuevo</mat-label>
+          <input matInput [(ngModel)]="newUsuario.usu_Id" name="id" type="number">
+        </mat-form-field>
+
+        <mat-form-field class="col-md-4" appearance="outline">
+          <mat-label>Nombre Completo</mat-label>
+          <input matInput [(ngModel)]="newUsuario.usu_Nombre" name="nombre" placeholder="Ej. Juan Pérez">
+        </mat-form-field>
+
+        <mat-form-field class="col-md-4" appearance="outline">
+          <mat-label>Correo Electrónico</mat-label>
+          <input matInput [(ngModel)]="newUsuario.usu_Correo" name="correo" type="email" placeholder="juan@aqualink.com">
+        </mat-form-field>
+
+        <mat-form-field class="col-md-2" appearance="outline">
+          <mat-label>Teléfono</mat-label>
+          <input matInput [(ngModel)]="newUsuario.usu_Telefono" name="telefono" placeholder="12345678">
+        </mat-form-field>
+
+        <mat-form-field class="col-md-2" appearance="outline">
+          <mat-label>Seleccionar Rol</mat-label>
+          <mat-select [(ngModel)]="newUsuario.usu_IdRol" name="idRol">
+            <mat-option *ngFor="let rol of roles" [value]="rol.id">
+              {{rol.nombre}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+
+    <mat-card-actions align="end" class="p-3">
+      <button mat-button color="warn" (click)="reserForm()" *ngIf="isEditing">Cancelar</button>
+      <button mat-raised-button color="primary" (click)="guardarUsuario()">
+        <mat-icon *ngIf="!isEditing">add</mat-icon>
+        {{ isEditing ? 'Actualizar' : 'Guardar Usuario' }}
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="usurios">
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.usu_Id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.usu_Nombre}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="correo">
+        <th mat-header-cell *matHeaderCellDef> Correo </th>
+        <td mat-cell *matCellDef="let element"> {{element.usu_Correo}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="telefono">
+        <th mat-header-cell *matHeaderCellDef> Teléfono </th>
+        <td mat-cell *matCellDef="let element"> {{element.usu_Telefono}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="rol">
+        <th mat-header-cell *matHeaderCellDef> Rol </th>
+        <td mat-cell *matCellDef="let element"> {{getNombreRol(element.usu_IdRol)}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef class="text-center"> Acciones </th>
+        <td mat-cell *matCellDef="let element" class="text-center">
+          <button mat-icon-button color="primary" (click)="editarUsuario(element)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteUsuario(element.usu_Id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="['nombre', 'correo', 'telefono', 'rol', 'acciones']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['nombre', 'correo', 'telefono', 'rol', 'acciones'];"></tr>
+    </table>
+
+    <div *ngIf="usurios.length === 0" class="p-4 text-center text-muted">
+      No se encontraron usuarios o el servidor está desconectado.
+    </div>
+  </div>
+</div>

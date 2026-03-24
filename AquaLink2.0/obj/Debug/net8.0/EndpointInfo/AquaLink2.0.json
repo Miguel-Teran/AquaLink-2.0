@@ -528,7 +528,7 @@
             "type": "string",
             "nullable": true
           },
-          "evi_Imagen": {
+          "evi_ImaURL": {
             "type": "string",
             "nullable": true
           },

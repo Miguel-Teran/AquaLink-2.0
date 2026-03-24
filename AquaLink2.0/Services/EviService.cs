@@ -17,19 +17,20 @@ namespace AquaLink2._0.Services
         {
             var lista = new List<Evidencia>();
             using SqlConnection conn = new SqlConnection(_connection);
-            using SqlCommand cmd = new SqlCommand("Obtener_Evidencias", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
+            using SqlCommand cmd = new SqlCommand("Obtener_Evidencia", conn);
 
+            cmd.CommandType = CommandType.StoredProcedure;
             conn.Open();
+
             using var reader = cmd.ExecuteReader();
+
             while (reader.Read())
             {
                 lista.Add(new Evidencia
                 {
-                    Evi_Id = Convert.ToInt32(reader["Evi_Id"]),
                     Evi_IdRep = Convert.ToInt32(reader["Evi_IdRep"]),
                     Evi_Descripcion = reader["Evi_Descripcion"].ToString(),
-                    Evi_Imagen = reader["Evi_ImaDireccion"].ToString() 
+                    Evi_ImaURL = reader["Evi_ImaDireccion"].ToString() 
                 });
             }
             return lista;
@@ -40,7 +41,7 @@ namespace AquaLink2._0.Services
             using SqlConnection conn = new SqlConnection(_connection);
             using SqlCommand cmd = new SqlCommand("Obtener_Evidencia_Por_Id", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@IdEvi", id);
+            cmd.Parameters.AddWithValue("@Id", id);
 
             conn.Open();
             using var reader = cmd.ExecuteReader();
@@ -48,10 +49,9 @@ namespace AquaLink2._0.Services
             {
                 return new Evidencia
                 {
-                    Evi_Id = Convert.ToInt32(reader["Evi_Id"]),
                     Evi_IdRep = Convert.ToInt32(reader["Evi_IdRep"]),
                     Evi_Descripcion = reader["Evi_Descripcion"].ToString(),
-                    Evi_Imagen = reader["Evi_ImaDireccion"].ToString()
+                    Evi_ImaURL = reader["Evi_ImaDireccion"].ToString()
                 };
             }
             return null;
@@ -61,11 +61,11 @@ namespace AquaLink2._0.Services
         {
             using SqlConnection conn = new SqlConnection(_connection);
             using SqlCommand cmd = new SqlCommand("Insertar_Evidencia", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
 
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Id", evidencia.Evi_Id);
             cmd.Parameters.AddWithValue("@IdRep", evidencia.Evi_IdRep);
-            cmd.Parameters.AddWithValue("@Desc", evidencia.Evi_Descripcion);
-            cmd.Parameters.AddWithValue("@Imagen", evidencia.Evi_Imagen);
+            cmd.Parameters.AddWithValue("@Descripcion", evidencia.Evi_Descripcion);
 
             conn.Open();
             cmd.ExecuteNonQuery();
@@ -75,11 +75,12 @@ namespace AquaLink2._0.Services
         {
             using SqlConnection conn = new SqlConnection(_connection);
             using SqlCommand cmd = new SqlCommand("Actualizar_Evidencia", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
 
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Clave", evidencia.Evi_Id);
+            cmd.Parameters.AddWithValue("@Descripcion", evidencia.Evi_Descripcion);
+            cmd.Parameters.AddWithValue("@Imadireccion", evidencia.Evi_ImaURL);
             cmd.Parameters.AddWithValue("@IdRep", evidencia.Evi_IdRep);
-            cmd.Parameters.AddWithValue("@Desc", evidencia.Evi_Descripcion);
-            cmd.Parameters.AddWithValue("@Imagen", evidencia.Evi_Imagen);
 
             conn.Open();
             cmd.ExecuteNonQuery();
@@ -91,7 +92,7 @@ namespace AquaLink2._0.Services
             using SqlCommand cmd = new SqlCommand("Eliminar_Evidencia", conn);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@IdRep", id);
+            cmd.Parameters.AddWithValue("@Id", id);
 
             conn.Open();
             cmd.ExecuteNonQuery();

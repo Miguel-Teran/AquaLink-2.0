@@ -8,9 +8,9 @@ namespace AquaLink2._0.Controllers
     [ApiController]
     public class EvidenciaController : ControllerBase
     {
-        private readonly EviService _eviService;
+        private readonly IEvidenciaService _eviService;
 
-        public EvidenciaController(EviService eviService)
+        public EvidenciaController(IEvidenciaService eviService)
         {
             _eviService = eviService;
         }
@@ -67,6 +67,24 @@ namespace AquaLink2._0.Controllers
                 return NotFound();
 
             _eviService.Borrar(id);
+            return Ok();
+        }
+
+        [HttpPost("subir")]
+        public async Task<IActionResult> GuardarEvidencia([FromForm] EvidenciaDto dto)
+        {
+            var resultado = await _imagenService.SubirImagenAsync(dto.Archivo);
+
+            if (resultado.Error != null) return BadRequest(resultado.Error.Message);
+
+            var nuevaEvidencia = new Evidencia
+            {
+                Evi_IdRep = dto.Evi_IdRep,
+                Evi_Descripcion = dto.Evi_Descripcion,
+                Evi_ImaURL = resultado.SecureUrl.ToString()
+            };
+
+            _repository.Insertar(nuevaEvidencia);
             return Ok();
         }
     }

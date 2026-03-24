@@ -149,7 +149,7 @@
   },
   {
     "ContainingType": "AquaLink2._0.Controllers.ReporteController",
-    "Method": "GetAll",
+    "Method": "ObternerTodo",
     "RelativePath": "api/Reporte",
     "HttpMethod": "GET",
     "IsController": true,

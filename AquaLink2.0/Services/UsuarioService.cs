@@ -16,6 +16,7 @@ namespace AquaLink2._0.Services
         public List<Usuario> ObtenerTodo()
         {
             var lista = new List<Usuario>();
+
             using SqlConnection conn = new SqlConnection(_connection);
             using SqlCommand cmd = new SqlCommand("Obtener_Usuario", conn);
 
@@ -43,7 +44,7 @@ namespace AquaLink2._0.Services
             using SqlCommand cmd = new SqlCommand("Obtener_Usuario_Por_Id", conn);
 
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Usu_Id", id);
+            cmd.Parameters.AddWithValue("@Id", id);
 
             conn.Open();
             using var reader = cmd.ExecuteReader();
@@ -55,6 +56,7 @@ namespace AquaLink2._0.Services
                     Usu_Id = Convert.ToInt32(reader["Usu_Id"]),
                     Usu_Nombre = reader["Usu_Nombre"].ToString(),
                     Usu_Correo = reader["Usu_Correo"].ToString(),
+                    Usu_Telefono = reader["Usu_Telefono"].ToString(),
                     Usu_IdRol = Convert.ToInt32(reader["Usu_IdRol"])
                 };
             }
@@ -83,7 +85,7 @@ namespace AquaLink2._0.Services
             using SqlCommand cmd = new SqlCommand("Actualizar_Usuario", conn);
 
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Usuario_Id", usuario.Usu_Id);
+            cmd.Parameters.AddWithValue("@Clave", usuario.Usu_Id);
             cmd.Parameters.AddWithValue("@Nombre", usuario.Usu_Nombre);
             cmd.Parameters.AddWithValue("@Correo", usuario.Usu_Correo);
             cmd.Parameters.AddWithValue("@Telefono", usuario.Usu_Telefono);
@@ -98,7 +100,7 @@ namespace AquaLink2._0.Services
             using SqlConnection conn = new SqlConnection(_connection);
             using SqlCommand cmd = new SqlCommand("Eliminar_Usuario", conn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Usu_Id", id);
+            cmd.Parameters.AddWithValue("@Id", id);
 
             conn.Open();
             cmd.ExecuteNonQuery();

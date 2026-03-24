@@ -8,15 +8,15 @@ namespace AquaLink2._0.Controllers
     [ApiController]
     public class ReporteController : ControllerBase
     {
-        private readonly ReporteService _service;
+        private readonly IReporteService _service;
 
-        public ReporteController(ReporteService service)
+        public ReporteController(IReporteService service)
         {
             _service = service;
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public IActionResult ObternerTodo()
         {
             var reportes = _service.ObtenerTodo();
             return Ok(reportes);

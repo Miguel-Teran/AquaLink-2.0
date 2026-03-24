@@ -8,9 +8,9 @@ namespace AquaLink2._0.Controllers
     [ApiController]
     public class ComentarioController : ControllerBase
     {
-        private readonly ComentarioService _comentarioService;
+        private readonly IComentarioService _comentarioService;
 
-        public ComentarioController(ComentarioService comentarioService)
+        public ComentarioController(IComentarioService comentarioService)
         {
             _comentarioService = comentarioService;
         }
