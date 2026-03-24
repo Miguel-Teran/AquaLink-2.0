@@ -1,0 +1,75 @@
+<div class="container">
+  <!-- Tarjeta del Formulario -->
+  <mat-card class="form-card">
+    <mat-card-header>
+      <mat-card-title>{{ isEditing ? 'Editar Reporte' : 'Nuevo Reporte' }}</mat-card-title>
+    </mat-card-header>
+    
+    <mat-card-content>
+      <form class="report-form">
+        <div class="form-row">
+          <mat-form-field appearance="outline">
+            <mat-label>Latitud</mat-label>
+            <input matInput type="number" [(ngModel)]="newReporte.rep_Lat" name="latitud">
+            <mat-icon matSuffix>location_on</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Longitud</mat-label>
+            <input matInput type="number" [(ngModel)]="newReporte.rep_Lon" name="longitud">
+            <mat-icon matSuffix>map</mat-icon>
+          </mat-form-field>
+        </div>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>ID Usuario</mat-label>
+          <input matInput type="number" [(ngModel)]="newReporte.rep_IdUsu" name="usuario">
+          <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+
+        <div class="actions">
+          <button mat-raised-button color="primary" (click)="isEditing ? guardarReporte() : InsertarReporte()">
+            <mat-icon>save</mat-icon>
+            {{ isEditing ? 'Actualizar' : 'Guardar' }}
+          </button>
+          <button mat-button color="warn" (click)="reserForm()" *ngIf="isEditing">
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- Tabla de Reportes -->
+  <mat-card class="table-card">
+    <mat-table [dataSource]="reportes" class="mat-elevation-z8">
+      
+      <!-- Columna Fecha -->
+      <ng-container matColumnDef="Fecha">
+        <mat-header-cell *matHeaderCellDef> Fecha </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.rep_Fecha | date:'short'}} </mat-cell>
+      </ng-container>
+
+      <!-- Columna Latitud -->
+      <ng-container matColumnDef="Latitud">
+        <mat-header-cell *matHeaderCellDef> Latitud </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.rep_Lat}} </mat-cell>
+      </ng-container>
+
+      <!-- Columna Longitud -->
+      <ng-container matColumnDef="Longitud">
+        <mat-header-cell *matHeaderCellDef> Longitud </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.rep_Lon}} </mat-cell>
+      </ng-container>
+
+      <!-- Columna Usuario -->
+      <ng-container matColumnDef="Usuario">
+        <mat-header-cell *matHeaderCellDef> Usuario ID </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.rep_IdUsu}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </mat-card>
+</div>

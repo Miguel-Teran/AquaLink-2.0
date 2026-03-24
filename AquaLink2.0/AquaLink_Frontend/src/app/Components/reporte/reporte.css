@@ -1,0 +1,63 @@
+.container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+.form-card {
+  border-top: 4px solid #3f51b5;
+}
+
+.report-form {
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.form-row mat-form-field {
+  flex: 1;
+  min-width: 200px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.table-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+mat-table {
+  width: 100%;
+  background: white;
+}
+
+.mat-column-Fecha {
+  flex: 0 0 180px;
+}
+
+/* Estilo para las filas al pasar el mouse */
+mat-row:hover {
+  background-color: #f0f2ff;
+  cursor: pointer;
+  transition: background 0.2s;
+}

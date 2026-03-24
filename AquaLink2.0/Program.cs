@@ -9,8 +9,6 @@ builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<IReporteService, ReporteService>();
 builder.Services.AddScoped<IComentarioService, ComentarioService>();
 builder.Services.AddScoped<IEvidenciaService, EviService>();
-builder.Services.Configure<CloudinarySettings>(builder.Configuration.GetSection("CloudinarySetting"));
-builder.Services.AddScoped<IImagenService, ImagenService>();
 
 builder.Services.AddCors(options =>
 {
