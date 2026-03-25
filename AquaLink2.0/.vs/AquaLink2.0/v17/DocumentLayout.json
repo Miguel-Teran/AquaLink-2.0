@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\joset\\OneDrive\\Escritorio\\AquaLink 2.0\\AquaLink2.0\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|c:\\users\\joset\\onedrive\\escritorio\\aqualink 2.0\\aqualink2.0\\controllers\\evidenciacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|solutionrelative:controllers\\evidenciacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|c:\\users\\joset\\onedrive\\escritorio\\aqualink 2.0\\aqualink2.0\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -18,11 +14,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\joset\\OneDrive\\Escritorio\\AquaLink 2.0\\AquaLink2.0\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -31,19 +27,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-24T15:04:41.372Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "EvidenciaController.cs",
-              "DocumentMoniker": "C:\\Users\\joset\\OneDrive\\Escritorio\\AquaLink 2.0\\AquaLink2.0\\Controllers\\EvidenciaController.cs",
-              "RelativeDocumentMoniker": "Controllers\\EvidenciaController.cs",
-              "ToolTip": "C:\\Users\\joset\\OneDrive\\Escritorio\\AquaLink 2.0\\AquaLink2.0\\Controllers\\EvidenciaController.cs",
-              "RelativeToolTip": "Controllers\\EvidenciaController.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAowEkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T15:03:36.303Z",
               "EditorCaption": ""
             }
           ]

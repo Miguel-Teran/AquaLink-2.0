@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AquaLink2.0")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e855b4ca434cd550c0fdc9052f2ccdf0452c0136")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+77cb7afcd773fba19ab0a4f55a241f0d96263e23")]
 [assembly: System.Reflection.AssemblyProductAttribute("AquaLink2.0")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AquaLink2.0")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
