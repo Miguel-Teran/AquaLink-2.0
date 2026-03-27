@@ -168,9 +168,3 @@ C:\Users\joset\OneDrive\Escritorio\AquaLink 2.0\AquaLink2.0\bin\Debug\net8.0\Swa
 C:\Users\joset\OneDrive\Escritorio\AquaLink 2.0\AquaLink2.0\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\joset\OneDrive\Escritorio\AquaLink 2.0\AquaLink2.0\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\joset\OneDrive\Escritorio\AquaLink 2.0\AquaLink2.0\obj\Debug\net8.0\AquaLink2.0.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\joset\OneDrive\Escritorio\AquaLink 2.0\AquaLink2.0\bin\Debug\net8.0\AquaLink_Frontend\angular.json
-C:\Users\joset\OneDrive\Escritorio\AquaLink 2.0\AquaLink2.0\bin\Debug\net8.0\AquaLink_Frontend\package-lock.json
-C:\Users\joset\OneDrive\Escritorio\AquaLink 2.0\AquaLink2.0\bin\Debug\net8.0\AquaLink_Frontend\package.json
-C:\Users\joset\OneDrive\Escritorio\AquaLink 2.0\AquaLink2.0\bin\Debug\net8.0\AquaLink_Frontend\tsconfig.app.json
-C:\Users\joset\OneDrive\Escritorio\AquaLink 2.0\AquaLink2.0\bin\Debug\net8.0\AquaLink_Frontend\tsconfig.json
-C:\Users\joset\OneDrive\Escritorio\AquaLink 2.0\AquaLink2.0\bin\Debug\net8.0\AquaLink_Frontend\tsconfig.spec.json

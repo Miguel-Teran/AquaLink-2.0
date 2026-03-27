@@ -1,6 +1,8 @@
 ﻿using AquaLink2._0.Models;
 using AquaLink2._0.Services;
+using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json.Nodes;
 
 namespace AquaLink2._0.Controllers
 {
@@ -36,11 +38,14 @@ namespace AquaLink2._0.Controllers
         [HttpPost]
         public IActionResult Insert([FromBody] Usuario nuevo)
         {
-            if (nuevo == null)
-                return BadRequest();
+            if (nuevo == null) return BadRequest("Los datos del usuario son nulos.");
+
+            // Esto valida las [Annotations] que pusimos en el modelo
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
 
             _usuarioService.Insertar(nuevo);
-            return Ok(nuevo);
+            return CreatedAtAction(nameof(ObtenerPorId), new { id = nuevo.Usu_Id }, nuevo);
         }
 
         [HttpPut]
@@ -71,23 +76,23 @@ namespace AquaLink2._0.Controllers
         }
 
         [HttpPost("login")]
-        public IActionResult Login([FromBody] LoginRequest login)
+        public IActionResult Login([FromBody] Login request)
         {
-            if (login == null)
-                return BadRequest();
+            // Si llegamos aquí, es que .NET pudo leer el JSON correctamente
+            if (request == null || string.IsNullOrEmpty(request.Usu_Correo))
+            {
+                return BadRequest(new { message = "Datos de inicio de sesión incompletos" });
+            }
 
-            var usuario = _usuarioService.ValidarLogin(login.Correo, login.Password);
+            // Llamamos a tu servicio con los datos del objeto 'request'
+            var usuario = _usuarioService.ValidarLogin(request.Usu_Correo, request.Usu_Password);
 
             if (usuario == null)
-                return Unauthorized("Credenciales incorrectas");
+            {
+                return Unauthorized(new { message = "Usuario o contraseña incorrecta" });
+            }
 
             return Ok(usuario);
         }
-    }
-
-    public class LoginRequest
-    {
-        public string Correo { get; set; }
-        public string Password { get; set; }
     }
 }

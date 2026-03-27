@@ -304,8 +304,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "login",
-        "Type": "AquaLink2._0.Controllers.LoginRequest",
+        "Name": "request",
+        "Type": "AquaLink2._0.Models.Login",
         "IsRequired": true
       }
     ],

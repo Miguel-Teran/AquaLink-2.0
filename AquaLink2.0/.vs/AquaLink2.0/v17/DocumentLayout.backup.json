@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "C:\\Users\\joset\\OneDrive\\Escritorio\\AquaLink 2.0\\AquaLink2.0\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|c:\\users\\joset\\onedrive\\escritorio\\aqualink 2.0\\aqualink2.0\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|solutionrelative:controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|c:\\users\\joset\\onedrive\\escritorio\\aqualink 2.0\\aqualink2.0\\models\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|solutionrelative:models\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|c:\\users\\joset\\onedrive\\escritorio\\aqualink 2.0\\aqualink2.0\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|solutionrelative:models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|c:\\users\\joset\\onedrive\\escritorio\\aqualink 2.0\\aqualink2.0\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|solutionrelative:services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|c:\\users\\joset\\onedrive\\escritorio\\aqualink 2.0\\aqualink2.0\\services\\iusuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|solutionrelative:services\\iusuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|c:\\users\\joset\\onedrive\\escritorio\\aqualink 2.0\\aqualink2.0\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DAB1ADAF-521D-4C3D-9075-BE9ECAF3D671}|AquaLink2.0.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -14,19 +34,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\Users\\joset\\OneDrive\\Escritorio\\AquaLink 2.0\\AquaLink2.0\\Models\\Login.cs",
+              "RelativeDocumentMoniker": "Models\\Login.cs",
+              "ToolTip": "C:\\Users\\joset\\OneDrive\\Escritorio\\AquaLink 2.0\\AquaLink2.0\\Models\\Login.cs",
+              "RelativeToolTip": "Models\\Login.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T07:10:49.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\joset\\OneDrive\\Escritorio\\AquaLink 2.0\\AquaLink2.0\\Models\\Usuario.cs",
+              "RelativeDocumentMoniker": "Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\joset\\OneDrive\\Escritorio\\AquaLink 2.0\\AquaLink2.0\\Models\\Usuario.cs",
+              "RelativeToolTip": "Models\\Usuario.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T04:41:09.236Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\joset\\OneDrive\\Escritorio\\AquaLink 2.0\\AquaLink2.0\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\joset\\OneDrive\\Escritorio\\AquaLink 2.0\\AquaLink2.0\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-24T15:04:41.372Z",
+              "WhenOpened": "2026-03-26T19:15:57.918Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IUsuarioService.cs",
+              "DocumentMoniker": "C:\\Users\\joset\\OneDrive\\Escritorio\\AquaLink 2.0\\AquaLink2.0\\Services\\IUsuarioService.cs",
+              "RelativeDocumentMoniker": "Services\\IUsuarioService.cs",
+              "ToolTip": "C:\\Users\\joset\\OneDrive\\Escritorio\\AquaLink 2.0\\AquaLink2.0\\Services\\IUsuarioService.cs",
+              "RelativeToolTip": "Services\\IUsuarioService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-26T18:46:59.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UsuarioService.cs",
+              "DocumentMoniker": "C:\\Users\\joset\\OneDrive\\Escritorio\\AquaLink 2.0\\AquaLink2.0\\Services\\UsuarioService.cs",
+              "RelativeDocumentMoniker": "Services\\UsuarioService.cs",
+              "ToolTip": "C:\\Users\\joset\\OneDrive\\Escritorio\\AquaLink 2.0\\AquaLink2.0\\Services\\UsuarioService.cs",
+              "RelativeToolTip": "Services\\UsuarioService.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAmwHQAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-26T12:57:13.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\Users\\joset\\OneDrive\\Escritorio\\AquaLink 2.0\\AquaLink2.0\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\Users\\joset\\OneDrive\\Escritorio\\AquaLink 2.0\\AquaLink2.0\\Controllers\\UsuarioController.cs*",
+              "RelativeToolTip": "Controllers\\UsuarioController.cs*",
+              "ViewState": "AgIAAEIAAAAAAAAAAAA9wE4AAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-26T15:32:18.652Z",
               "EditorCaption": ""
             }
           ]

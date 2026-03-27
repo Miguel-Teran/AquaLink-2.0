@@ -6,7 +6,7 @@ namespace AquaLink2._0.Services
 {
     public class UsuarioService : IUsuarioService
     {
-        private readonly string _connection;
+        private readonly string? _connection;
 
         public UsuarioService(IConfiguration config)
         {
@@ -17,7 +17,7 @@ namespace AquaLink2._0.Services
         {
             var lista = new List<Usuario>();
 
-            using SqlConnection conn = new SqlConnection(_connection);
+            using SqlConnection conn = new SqlConnection(_connection!);
             using SqlCommand cmd = new SqlCommand("Obtener_Usuario", conn);
 
             cmd.CommandType = CommandType.StoredProcedure;
@@ -38,9 +38,9 @@ namespace AquaLink2._0.Services
             return lista;
         }
 
-        public Usuario ObtenerPorId(int id)
+        public Usuario? ObtenerPorId(int id)
         {
-            using SqlConnection conn = new SqlConnection(_connection);
+            using SqlConnection conn = new SqlConnection(_connection!);
             using SqlCommand cmd = new SqlCommand("Obtener_Usuario_Por_Id", conn);
 
             cmd.CommandType = CommandType.StoredProcedure;
@@ -65,7 +65,7 @@ namespace AquaLink2._0.Services
 
         public void Insertar(Usuario usuario)
         {
-            using SqlConnection conn = new SqlConnection(_connection);
+            using SqlConnection conn = new SqlConnection(_connection!);
             using SqlCommand cmd = new SqlCommand("sp_InsertarUsuario", conn);
 
             cmd.CommandType = CommandType.StoredProcedure;
@@ -74,6 +74,7 @@ namespace AquaLink2._0.Services
             cmd.Parameters.AddWithValue("@Correo", usuario.Usu_Correo);
             cmd.Parameters.AddWithValue("@Tel", usuario.Usu_Telefono);
             cmd.Parameters.AddWithValue("@IdRol", usuario.Usu_IdRol);
+            cmd.Parameters.AddWithValue("@Password", usuario.Usu_Password);
 
             conn.Open();
             cmd.ExecuteNonQuery();
@@ -112,8 +113,8 @@ namespace AquaLink2._0.Services
             using SqlCommand cmd = new SqlCommand("Validar_Acceso", conn);
 
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Correo", correo);
-            cmd.Parameters.AddWithValue("@Pass", password);
+            cmd.Parameters.AddWithValue("@Correo", correo.Trim());
+            cmd.Parameters.AddWithValue("@Password", password.Trim());
 
             conn.Open();
             using var reader = cmd.ExecuteReader();
