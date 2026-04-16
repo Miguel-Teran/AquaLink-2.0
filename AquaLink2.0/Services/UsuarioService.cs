@@ -91,6 +91,7 @@ namespace AquaLink2._0.Services
             cmd.Parameters.AddWithValue("@Correo", usuario.Usu_Correo);
             cmd.Parameters.AddWithValue("@Telefono", usuario.Usu_Telefono);
             cmd.Parameters.AddWithValue("@IdRol", usuario.Usu_IdRol);
+            cmd.Parameters.AddWithValue("@Password", usuario.Usu_Password);
 
             conn.Open();
             cmd.ExecuteNonQuery();

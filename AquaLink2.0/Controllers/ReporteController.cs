@@ -34,40 +34,42 @@ namespace AquaLink2._0.Controllers
         }
 
         [HttpPost]
-        public IActionResult Insertar([FromBody] Reporte nuevo)
+        public IActionResult Insertar([FromBody] Reporte reporte) // Cambié 'nuevo' por 'reporte' para ser estándar
         {
-            if (nuevo == null)
-                return BadRequest();
+            if (reporte == null) return BadRequest("El objeto es nulo");
 
-            _service.Insertar(nuevo);
-            return Ok(nuevo);
+            // Si rep_Fecha es DateOnly, el string "YYYY-MM-DD" que mandamos arriba entrará perfecto.
+            _service.Insertar(reporte);
+            return Ok(reporte);
         }
 
         [HttpPut]
         public IActionResult Actualizar([FromBody] Reporte modificado)
         {
-            if (modificado == null)
-                return BadRequest();
-
-            var existente = _service.ObtenerPorId(modificado.Rep_Id);
-
-            if (existente == null)
-                return NotFound();
+            // Si modificado.Rep_Id llega en 0, es por eso que da el 400
+            if (modificado == null || modificado.Rep_Id == 0)
+                return BadRequest("El ID del reporte es inválido.");
 
             _service.Actualizar(modificado);
-            return Ok(modificado);
+            return Ok(new { message = "Actualizado correctamente" });
         }
 
         [HttpDelete("{id}")]
         public IActionResult Borrar(int id)
         {
-            var existente = _service.ObtenerPorId(id);
+            var reporte = _service.ObtenerPorId(id);
 
-            if (existente == null)
+            if (reporte == null)
                 return NotFound();
-
-            _service.Borrar(id);
-            return Ok();
+            try
+            {
+                _service.Borrar(id);
+                return Ok(new { message = "Reporte eliminado exitosamente" });
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

@@ -29,7 +29,7 @@ namespace AquaLink2._0.Services
             {
                 lista.Add(new Reporte
                 {
-                    Rep_Descripcion = reader["Rep_Descripción"].ToString(),
+                    Rep_Descripcion = reader["Rep_Descripcion"].ToString(),
                     Rep_Fecha = DateOnly.FromDateTime(Convert.ToDateTime(reader["Rep_Fecha"])),
                     Rep_Lat = Convert.ToDecimal(reader["Rep_Lat"]),
                     Rep_Lon = Convert.ToDecimal(reader["Rep_Lon"]),
@@ -55,7 +55,7 @@ namespace AquaLink2._0.Services
                 return new Reporte
                 {
                     Rep_Id = Convert.ToInt32(reader["Rep_Id"]),
-                    Rep_Descripcion = reader["Rep_Descripción"].ToString(),
+                    Rep_Descripcion = reader["Rep_Descripcion"].ToString(),
                     Rep_Fecha = DateOnly.FromDateTime(Convert.ToDateTime(reader["Rep_Fecha"])),
                     Rep_Lat = Convert.ToDecimal(reader["Rep_Lat"]),
                     Rep_Lon = Convert.ToDecimal(reader["Rep_Lon"]),
@@ -107,4 +107,3 @@ namespace AquaLink2._0.Services
         }
     }
 }
-

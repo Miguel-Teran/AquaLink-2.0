@@ -1,6 +1,10 @@
-﻿using System.Data;
-using AquaLink2._0.Models;
+﻿using AquaLink2._0.Models;
+using AquaLink2._0.Services;
+using CloudinaryDotNet;
+using CloudinaryDotNet.Actions;
 using Microsoft.Data.SqlClient;
+using Microsoft.Extensions.Options;
+using System.Data;
 
 namespace AquaLink2._0.Services
 {
@@ -30,7 +34,7 @@ namespace AquaLink2._0.Services
                 {
                     Evi_IdRep = Convert.ToInt32(reader["Evi_IdRep"]),
                     Evi_Descripcion = reader["Evi_Descripcion"].ToString(),
-                    Evi_ImaURL = reader["Evi_ImaDireccion"].ToString() 
+                    Evi_ImaDireccion = reader["Evi_ImaDireccion"].ToString() 
                 });
             }
             return lista;
@@ -51,7 +55,7 @@ namespace AquaLink2._0.Services
                 {
                     Evi_IdRep = Convert.ToInt32(reader["Evi_IdRep"]),
                     Evi_Descripcion = reader["Evi_Descripcion"].ToString(),
-                    Evi_ImaURL = reader["Evi_ImaDireccion"].ToString()
+                    Evi_ImaDireccion = reader["Evi_ImaDireccion"].ToString()
                 };
             }
             return null;
@@ -79,7 +83,7 @@ namespace AquaLink2._0.Services
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@Clave", evidencia.Evi_Id);
             cmd.Parameters.AddWithValue("@Descripcion", evidencia.Evi_Descripcion);
-            cmd.Parameters.AddWithValue("@Imadireccion", evidencia.Evi_ImaURL);
+            cmd.Parameters.AddWithValue("@Imadireccion", evidencia.Evi_ImaDireccion);
             cmd.Parameters.AddWithValue("@IdRep", evidencia.Evi_IdRep);
 
             conn.Open();

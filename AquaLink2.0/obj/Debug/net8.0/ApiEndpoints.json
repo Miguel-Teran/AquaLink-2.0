@@ -166,7 +166,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "nuevo",
+        "Name": "reporte",
         "Type": "AquaLink2._0.Models.Reporte",
         "IsRequired": true
       }

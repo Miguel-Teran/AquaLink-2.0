@@ -5,6 +5,8 @@ namespace AquaLink2._0.Models
 {
     public class Usuario
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Usu_Id { get; set; }
 
         public string? Usu_Nombre { get; set; }
