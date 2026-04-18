@@ -272,10 +272,44 @@
             "description": "OK"
           }
         }
+      }
+    },
+    "/api/Reporte/{id}": {
+      "get": {
+        "tags": [
+          "Reporte"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       },
       "put": {
         "tags": [
           "Reporte"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
         ],
         "requestBody": {
           "content": {
@@ -296,29 +330,6 @@
             }
           }
         },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Reporte/{id}": {
-      "get": {
-        "tags": [
-          "Reporte"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -461,6 +472,37 @@
         }
       }
     },
+    "/api/Usuario/Registrar": {
+      "post": {
+        "tags": [
+          "Usuario"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Usuario/login": {
       "post": {
         "tags": [
@@ -498,19 +540,19 @@
       "Comentario": {
         "type": "object",
         "properties": {
-          "com_Id": {
+          "Com_Id": {
             "type": "integer",
             "format": "int32"
           },
-          "com_IdUsu": {
+          "Com_IdUsu": {
             "type": "integer",
             "format": "int32"
           },
-          "com_IdRep": {
+          "Com_IdRep": {
             "type": "integer",
             "format": "int32"
           },
-          "com_Descripcion": {
+          "Com_Descripcion": {
             "type": "string",
             "nullable": true
           }
@@ -520,19 +562,19 @@
       "Evidencia": {
         "type": "object",
         "properties": {
-          "evi_Id": {
+          "Evi_Id": {
             "type": "integer",
             "format": "int32"
           },
-          "evi_Descripcion": {
+          "Evi_Descripcion": {
             "type": "string",
             "nullable": true
           },
-          "evi_ImaDireccion": {
+          "Evi_ImaDireccion": {
             "type": "string",
             "nullable": true
           },
-          "evi_IdRep": {
+          "Evi_IdRep": {
             "type": "integer",
             "format": "int32"
           }
@@ -542,11 +584,11 @@
       "Login": {
         "type": "object",
         "properties": {
-          "usu_Correo": {
+          "Usu_Correo": {
             "type": "string",
             "nullable": true
           },
-          "usu_Password": {
+          "Usu_Password": {
             "type": "string",
             "nullable": true
           }
@@ -556,27 +598,28 @@
       "Reporte": {
         "type": "object",
         "properties": {
-          "rep_Id": {
+          "Rep_Id": {
             "type": "integer",
             "format": "int32"
           },
-          "rep_Descripcion": {
+          "Rep_Descripcion": {
             "type": "string",
             "nullable": true
           },
-          "rep_Fecha": {
+          "Rep_Fecha": {
             "type": "string",
-            "format": "date"
+            "format": "date",
+            "nullable": true
           },
-          "rep_Lat": {
+          "Rep_Lat": {
             "type": "number",
             "format": "double"
           },
-          "rep_Lon": {
+          "Rep_Lon": {
             "type": "number",
             "format": "double"
           },
-          "rep_IdUsu": {
+          "Rep_IdUsu": {
             "type": "integer",
             "format": "int32"
           }
@@ -586,27 +629,27 @@
       "Usuario": {
         "type": "object",
         "properties": {
-          "usu_Id": {
+          "Usu_Id": {
             "type": "integer",
             "format": "int32"
           },
-          "usu_Nombre": {
+          "Usu_Nombre": {
             "type": "string",
             "nullable": true
           },
-          "usu_Correo": {
+          "Usu_Correo": {
             "type": "string",
             "nullable": true
           },
-          "usu_Telefono": {
+          "Usu_Telefono": {
             "type": "string",
             "nullable": true
           },
-          "usu_IdRol": {
+          "Usu_IdRol": {
             "type": "integer",
             "format": "int32"
           },
-          "usu_Password": {
+          "Usu_Password": {
             "type": "string",
             "nullable": true
           }

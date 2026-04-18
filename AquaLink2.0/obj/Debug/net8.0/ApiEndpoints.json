@@ -175,22 +175,6 @@
   },
   {
     "ContainingType": "AquaLink2._0.Controllers.ReporteController",
-    "Method": "Actualizar",
-    "RelativePath": "api/Reporte",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "modificado",
-        "Type": "AquaLink2._0.Models.Reporte",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "AquaLink2._0.Controllers.ReporteController",
     "Method": "GetById",
     "RelativePath": "api/Reporte/{id}",
     "HttpMethod": "GET",
@@ -200,6 +184,27 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AquaLink2._0.Controllers.ReporteController",
+    "Method": "Actualizar",
+    "RelativePath": "api/Reporte/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "modificado",
+        "Type": "AquaLink2._0.Models.Reporte",
         "IsRequired": true
       }
     ],
@@ -306,6 +311,22 @@
       {
         "Name": "request",
         "Type": "AquaLink2._0.Models.Login",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AquaLink2._0.Controllers.UsuarioController",
+    "Method": "Registrar",
+    "RelativePath": "api/Usuario/Registrar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuario",
+        "Type": "AquaLink2._0.Models.Usuario",
         "IsRequired": true
       }
     ],

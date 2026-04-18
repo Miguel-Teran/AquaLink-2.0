@@ -9,6 +9,7 @@ namespace AquaLink2._0.Services
         void Insertar(Usuario usuario);
         void Actualizar(Usuario usuario);
         void Borrar(int id);
+        int Registrar(Usuario usuario);
         Usuario? ValidarLogin(string correo, string password);
     }
 }

@@ -75,6 +75,14 @@ namespace AquaLink2._0.Controllers
             return Ok();
         }
 
+        [HttpPost("Registrar")]
+        public IActionResult Registrar([FromBody] Usuario usuario)
+        {
+            int resultado = _usuarioService.Registrar(usuario);
+            // Devolvemos el número directamente para que el (res === 1) de Angular funcione
+            return Ok(resultado);
+        }
+
         [HttpPost("login")]
         public IActionResult Login([FromBody] Login request)
         {

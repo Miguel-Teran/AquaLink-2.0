@@ -131,6 +131,23 @@ namespace AquaLink2._0.Services
             }
             return null;
         }
+        public int Registrar(Usuario usuario)
+        {
+            using SqlConnection conn = new SqlConnection(_connection);
+            using SqlCommand cmd = new SqlCommand("sp_InsertarUsuario", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
 
+            cmd.Parameters.AddWithValue("@Nombre", usuario.Usu_Nombre);
+            cmd.Parameters.AddWithValue("@Correo", usuario.Usu_Correo);
+            cmd.Parameters.AddWithValue("@Password", usuario.Usu_Password);
+            cmd.Parameters.AddWithValue("@Rol", 2);
+            SqlParameter resParam = new SqlParameter("@Resultado", SqlDbType.Int) { Direction = ParameterDirection.Output };
+            cmd.Parameters.Add(resParam);
+
+            conn.Open();
+            cmd.ExecuteNonQuery();
+
+            return (int)resParam.Value;
+        }
     }
 }

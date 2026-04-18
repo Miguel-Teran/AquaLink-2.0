@@ -9,6 +9,10 @@ builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<IReporteService, ReporteService>();
 builder.Services.AddScoped<IComentarioService, ComentarioService>();
 builder.Services.AddScoped<IEvidenciaService, EviService>();
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.PropertyNamingPolicy = null;
+});
 
 builder.Services.AddCors(options =>
 {

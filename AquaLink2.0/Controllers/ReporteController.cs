@@ -18,7 +18,8 @@ namespace AquaLink2._0.Controllers
         [HttpGet]
         public IActionResult ObternerTodo()
         {
-            var reportes = _service.ObtenerTodo();
+            // Forzamos a que sea una lista de la clase Reporte
+            IEnumerable<Reporte> reportes = _service.ObtenerTodo();
             return Ok(reportes);
         }
 
@@ -34,19 +35,24 @@ namespace AquaLink2._0.Controllers
         }
 
         [HttpPost]
-        public IActionResult Insertar([FromBody] Reporte reporte) // Cambié 'nuevo' por 'reporte' para ser estándar
+        public IActionResult Insertar([FromBody] Reporte reporte) // Cambiamos 'reporte' por 'data'
         {
             if (reporte == null) return BadRequest("El objeto es nulo");
 
-            // Si rep_Fecha es DateOnly, el string "YYYY-MM-DD" que mandamos arriba entrará perfecto.
-            _service.Insertar(reporte);
+            int nuevoId = _service.Insertar(reporte);
+            reporte.Rep_Id = nuevoId;
+
             return Ok(reporte);
         }
 
-        [HttpPut]
-        public IActionResult Actualizar([FromBody] Reporte modificado)
+        [HttpPut("{id}")]
+        public IActionResult Actualizar(int id, [FromBody] Reporte modificado)
         {
-            // Si modificado.Rep_Id llega en 0, es por eso que da el 400
+            if (modificado != null)
+            {
+                modificado.Rep_Id = id;
+            }
+
             if (modificado == null || modificado.Rep_Id == 0)
                 return BadRequest("El ID del reporte es inválido.");
 
